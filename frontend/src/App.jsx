@@ -16,7 +16,7 @@ function App() {
         async function loadProducts() {
             try {
                 const response = await fetch(
-                    "http://localhost:5000/api/products"
+                    "https://ine-price-tracker-c7em.onrender.com/api/products"
                 );
 
                 if (!response.ok) {
@@ -50,13 +50,13 @@ function App() {
             try {
                 const [historyResponse, logsResponse, trackedResponse] = await Promise.all([
                     fetch(
-                        `http://localhost:5000/api/products/${selectedProduct.id}/history`
+                        `https://ine-price-tracker-c7em.onrender.com/api/products/${selectedProduct.id}/history`
                     ),
                     fetch(
-                        `http://localhost:5000/api/products/${selectedProduct.id}/logs`
+                        `https://ine-price-tracker-c7em.onrender.com/api/products/${selectedProduct.id}/logs`
                     ),
                     fetch(
-                        "http://localhost:5000/api/tracked-products"
+                        "https://ine-price-tracker-c7em.onrender.com/api/tracked-products"
                     )
                 ]);
 
@@ -97,7 +97,7 @@ function App() {
             const method = tracked ? "DELETE" : "POST";
 
             const response = await fetch(
-                `http://localhost:5000/api/products/${selectedProduct.id}/track`,
+                `https://ine-price-tracker-c7em.onrender.com/api/products/${selectedProduct.id}/track`,
                 {
                     method
                 }
